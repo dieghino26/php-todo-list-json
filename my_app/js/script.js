@@ -1,12 +1,25 @@
 const { createApp } = Vue;
-const apiUri = "http://localhost/php-todo-list-json/api/tasks/";
+const endpoint = "http://localhost/php-todo-list-json/api/tasks/";
 
 const app = createApp({
     data: () => ({
-        tasks: []
+        tasks: [],
+        newTask: ""
     }),
+    methods: {
+        addTask() {
+            const data = { task: this.newTask }
+            const config = {
+                headers: { "Content-Type": "multipart/form-data" }
+            }
+            axios.post(endpoint, data, config).then(res => {
+                this.tasks = res.data
+                this.newTask = ""
+            })
+        }
+    },
     created() {
-        axios.get(apiUri).then(res => {
+        axios.get(endpoint).then(res => {
             this.tasks = res.data
         })
     }

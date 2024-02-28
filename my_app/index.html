@@ -44,12 +44,15 @@
         <div class="add-task">
             <div class="container">
                 <div class="row">
-                    <div class="col-8">
-                        <input type="text" class="form-control" placeholder="Add tasks...">
-                    </div>
-                    <div class="col-4">
-                        <button class=" btn btn-primary" type="button" id="button-add">Add</button>
-                    </div>
+                    <form @submit.prevent="addTask()">
+
+                        <div class="col-8">
+                            <input type="text" class="form-control" placeholder="Add tasks..." v-model.trim="newTask">
+                        </div>
+                        <div class="col-4">
+                            <button class=" btn btn-primary" type="button" id="button-add">Add</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
