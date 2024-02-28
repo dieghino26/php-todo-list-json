@@ -11,6 +11,9 @@
         integrity='sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=='
         crossorigin='anonymous' />
 
+    <!--Style-->
+    <link rel="stylesheet" href="css/style.css">
+
     <!--Vue JS-->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
@@ -19,7 +22,33 @@
 </head>
 
 <body>
-    <div id="root"></div>
+    <div id="root">
+        <h1 class="text-center">To Do List</h1>
+
+        <div class="todo-list ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="list-group">
+                            <li class="list-group-item">An item</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="add-task">
+            <div class="container">
+                <div class="row">
+                    <div class="col-8">
+                        <input type="text" class="form-control" placeholder="Add tasks...">
+                    </div>
+                    <div class="col-4">
+                        <button class=" btn btn-primary" type="button" id="button-add">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
